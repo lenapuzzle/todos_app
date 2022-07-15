@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos App</title>
+  </head>
+  <body>
+    <h1>List of Todos</h1>
+    {#<h3>Logged in user's id: {{ session['logged_user'] }}</h3>#}
+    {# Or #}
+    <h3>Welcome {{user.first_name}}!</h3>
+    <ul>
+      {% for todo in todos: %}
+      <li>
+        Id: {{ todo['id'] }} Todo: {{ todo['description'] }} Status:
+        {{todo['status'] }} User Id: {{ todo['user_id'] }}
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="/todo/form">Add new todo</a>
+  </body>
+</html>
